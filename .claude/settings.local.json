@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bin/rails runner:*)",
+      "Bash(rails db:migrate:*)",
+      "Bash(bundle install:*)",
+      "Bash(npm run build)"
+    ]
+  }
+}

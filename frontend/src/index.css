@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --heading-font: "Inter", sans-serif;
+  --body-font: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--body-font);
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--body-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+  }
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= @band.name %> - Electronic Press Kit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #1f2937;
+      background: #fff;
+    }
+
+    .page {
+      page-break-after: always;
+      padding: 20px;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #e5e7eb;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      max-height: 80px;
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
+
+    .band-name {
+      font-size: 28pt;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 5px;
+    }
+
+    .headline {
+      font-size: 14pt;
+      color: #6b7280;
+      margin-bottom: 5px;
+    }
+
+    .one-sheet {
+      font-size: 11pt;
+      font-style: italic;
+      color: #9ca3af;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #111827;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    .bio {
+      text-align: justify;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .member {
+      text-align: center;
+    }
+
+    .member-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+
+    .member-name {
+      font-weight: 600;
+      font-size: 10pt;
+    }
+
+    .member-role {
+      color: #6b7280;
+      font-size: 9pt;
+    }
+
+    .quote {
+      padding: 15px;
+      background: #f9fafb;
+      border-left: 3px solid #3b82f6;
+      margin-bottom: 12px;
+    }
+
+    .quote-text {
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .quote-source {
+      font-size: 9pt;
+      color: #6b7280;
+    }
+
+    .releases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .release {
+      text-align: center;
+    }
+
+    .release-cover {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+
+    .release-title {
+      font-weight: 600;
+      font-size: 10pt;
+    }
+
+    .release-info {
+      color: #6b7280;
+      font-size: 9pt;
+    }
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .contact-card {
+      padding: 15px;
+      background: #f9fafb;
+      border-radius: 6px;
+    }
+
+    .contact-type {
+      text-transform: uppercase;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #3b82f6;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .contact-name {
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .contact-company {
+      color: #6b7280;
+      font-size: 9pt;
+      margin-bottom: 5px;
+    }
+
+    .contact-details {
+      font-size: 9pt;
+    }
+
+    .events-list {
+      list-style: none;
+    }
+
+    .event-item {
+      display: flex;
+      padding: 10px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .event-date {
+      width: 80px;
+      font-weight: 600;
+      font-size: 9pt;
+      color: #3b82f6;
+    }
+
+    .event-info {
+      flex: 1;
+    }
+
+    .event-title {
+      font-weight: 500;
+    }
+
+    .event-venue {
+      color: #6b7280;
+      font-size: 9pt;
+    }
+
+    .social-links {
+      text-align: center;
+      padding-top: 15px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .social-link {
+      display: inline-block;
+      margin: 0 10px;
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    .rider-section {
+      margin-bottom: 15px;
+      padding: 15px;
+      background: #f9fafb;
+      border-radius: 6px;
+    }
+
+    .rider-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .rider-content {
+      font-size: 10pt;
+      white-space: pre-wrap;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      padding-top: 15px;
+      border-top: 2px solid #e5e7eb;
+      color: #9ca3af;
+      font-size: 9pt;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>
