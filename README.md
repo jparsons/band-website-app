@@ -25,6 +25,7 @@ A complete Ruby on Rails API backend with React frontend for rock bands to manag
 ## Tech Stack
 
 ### Backend
+- Ruby 3.2.0
 - Ruby on Rails 7.1 (API mode)
 - PostgreSQL database
 - JWT authentication
@@ -38,7 +39,7 @@ A complete Ruby on Rails API backend with React frontend for rock bands to manag
 - TanStack Query (React Query) for data fetching
 - Tailwind CSS for styling
 - React Hook Form for form handling
-- React Image Lightbox for galleries
+- Yet Another React Lightbox for galleries
 - React Toastify for notifications
 
 ## Project Structure
@@ -296,4 +297,4 @@ For issues or questions:
 
 ---
 
-**Happy Rocking! 🎸**
+**Happy Rocking!**
